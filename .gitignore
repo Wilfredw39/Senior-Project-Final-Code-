@@ -1,0 +1,5 @@
+# Igonre Trained Models, Pickled Dataframes, Datassets, and Pickled Numpy arrays.
+*.pkl
+*.npy
+*.h5
+*.ipynb_checkpoints

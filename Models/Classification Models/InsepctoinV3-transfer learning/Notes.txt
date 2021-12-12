@@ -1,0 +1,4 @@
+exp#1: EarlyStopping(monitor = 'loss', patience = 5)
+exp#2: EarlyStopping(monitor = 'loss', patience = 10)
+exp#3: EarlyStopping(monitor = 'val_loss', patience = 15)
+exp#4: EarlyStopping(monitor = 'val_loss', patience = 15)

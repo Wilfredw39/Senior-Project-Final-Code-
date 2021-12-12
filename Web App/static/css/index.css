@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(276, 51, 34);
+    background-color: rgb(95, 42, 131, 1);
+    background-color: rgb(42, 117, 131, 1);
+
+}
+.logo{
+    display: flex;
+    width: 5%;
+}
+.logo img{
+    width: auto;
+    height: 100px;
+}

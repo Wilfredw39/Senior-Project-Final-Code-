@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BTC</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{url_for('static',filename='css/Home.css')}}">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Favicon Icons -->
+
+  <link rel="" sizes="180x180" href="{{url_for('static',filename='img/favicon_io/apple-touch-icon')}}">
+
+  <link rel="" type="image/png" sizes="32x32" href="{{url_for('static',filename='img/favicon_io/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="{{url_for('static',filename='img/favicon_io/favicon-16x16.png')}}">
+  <link rel="manifest" href="{{url_for('static',filename='img/favicon_io/site.webmanifest')}}">
+
+</head>
+
+<body>
+
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <a class="navbar-brand" href="{{url_for('index')}}">BTC</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('index')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('index')}}#testimonials">Use Model</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('index')}}">About</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+      <!-- Title -->
+
+      <div class="row">
+
+        <div class="col-lg-7" id="landing-text">
+          <h1>Brain Tumor Classifier</h1>
+          <p>This system uses two DL Models to detect and classify brain tumors, and further break down the tumor types
+            into Glioma II, Glioma III, Glioma VI, Meningioma, or Pituitary. It also segments the tumor region down to a
+            pixel level.</p>
+          <button type="button" class="btn btn-outline-light btn-lg download-button"
+            onclick="window.location.href='#features';">
+            Show more</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-check-circle fa-4x"></i>
+          <h3 class="feature-title">Easy to use.</h3>
+          <p>So easy to use, just upload the MR Image.</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-bullseye fa-4x"></i>
+          <h3 class="feature-title">Accurate</h3>
+          <p>Height accuracy in detecting and classifying brain tumor type.</p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="icon fas fa-dollar-sign fa-4x"></i>
+          <h3 class="feature-title">Free</h3>
+          <p>Free To Use!</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section class="colored-section" id="testimonials">
+    <div id="testimonial-Text" class="container-fluid" data-ride="false">
+      <h1>Upload MRI</h1>
+
+      <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <!-- <h2>Upload MR Image</h2> -->
+        <div id="form-div">
+          <div class="drop-zone">
+            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+            <input id="file-picker" type="file" name="file" accept="image/*" class="drop-zone__input">
+          </div>
+          <button type="submit" value="Upload" id="upload-button" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="foot-nav">
+      <a class="navbar-brand" href="{{url_for('index')}}">BTC</a>
+      <nav>
+        <a class="footer-link" href="{{url_for('index')}}">Home</a>
+        <a class="footer-link" href="{{url_for('index')}}">About</a>
+        <a class="footer-link" href="{{url_for('index')}}#testimonials">Use Model</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="{{url_for('static',filename='js/drop_zone.js')}}"></script>
+  <script>
+    $("#file-picker").change(function () {
+      var input = document.getElementById('file-picker');
+      for (var i = 0; i < input.files.length; i++) {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+        var ext = input.files[i].name.substring(input.files[i].name.lastIndexOf('.') + 1).toLowerCase()
+        if ((ext == 'jpg') || (ext == 'png')) {
+          $("#outer #msg").text("Files are supported")
+        }
+        else {
+          $("#outer #msg").text("Files are NOT supported")
+          document.getElementById("file-picker").value = "";
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
